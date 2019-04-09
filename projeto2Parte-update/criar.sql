@@ -1,4 +1,3 @@
-
 drop table if exists Empresa;
 drop table if exists Estudio;
 drop table if exists Publicidade;
@@ -19,21 +18,21 @@ create table Empresa (
 	representante text,
 	contacto integer unique,
 	morada text unique,
-	primary key(nome, representante),
+	CONSTRAIN EmpresaPK primary key(nome, representante),
 
 );
 
 create table Estudio(
 	nome text,
 	representante text,
-	foreign key(nome, representante) references Empresa(nome, representante)
+	CONSTRAIN EstudioFK foreign key(nome, representante) references Empresa(nome, representante)
 	
 );
 
 create table Publicidade(
 	nome text,
 	representante text,
-	foreign key(nome, representante) references Empresa(nome, representante)
+	CONSTRAIN Publicidade foreign key(nome, representante) references Empresa(nome, representante)
 );
 
 create table Video(
@@ -44,66 +43,67 @@ create table Video(
 	descricao text,
 	realizador text,
 	duracao integer,
-	primary key(titulo, dataPublicacao),
-	foreign key(Erepresentante, Enome) references Estudio(representante, nome)
+	CONSTRAIN VideoPK primary key(titulo, dataPublicacao),
+	CONSTRAIN VideoFK foreign key(Erepresentante, Enome) references Estudio(representante, nome)
 
 );
 
 create table Filme(
 	titulo text,
 	dataPublicacao text,
-	genero text check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficçao' or genero='cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
+	genero text CONSTRAIN GeneroCerto check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficçao' or genero='cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
 	atorPrincipal text not null,
-	foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao)
+	CONSTRAIN FilmeFK foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao)
 	
 );
 
 create table Serie(
 	titulo text,
 	dataPublicacao text,
-	genero text check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficçao' or genero='cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
-	numTemporadas integer check (numTemporadas>0),
-	numEpisódiosTemporada integer check (numEpisodiosTemporada>0),
+	genero text CONSTRAIN GeneroCertocheck (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficçao' or genero='cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
+	numTemporadas integer CONSTRAIN TempMaiorZero check (numTemporadas>0),
+	numEpisódiosTemporada integer CONSTRAIN EpMaiorZero check (numEpisodiosTemporada>0),
 	atorPrincipal text not null,
-	foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao)
+	CONSTRAIN SerieFK foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao)
 );
 
 create table Documentario(
 	titulo text,
 	dataPublicacao text,
-	tipo text CHECK (tipo='autobiografico' or tipo='informacao' or tipo='exposicao'),
-	foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao)
+	tipo text CONSTRAIN GeneroCerto check (tipo='autobiografico' or tipo='informacao' or tipo='exposicao'),
+	CONSTRAIN DocumentarioFK foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao)
 );
 
 create table Anuncio(
 	nome text,
-	tipo text check (tipo='informativo' or tipo='comercial'),
+	tipo text CONSTRAIN TipoCerto check (tipo='informativo' or tipo='comercial'),
 	Pnome text,
 	Prepresentante text,
-	duraçao integer check (duraçao > 0),
-	prioridade integer CHECK (prioridade>0 and prioridade<4),
-	preferencia text CHECK (preferencia='filme' or preferencia='serie' or preferencia='documentario'),
-	preco integer check (preco>0),
-	primary key(nome, tipo), 
-	foreign key(Prepresentante, Pnome) references Publicidade(representante, nome)
+	duracao integer CONSTRAIN DuracaoMaiorZero check (duraçao > 0),
+	prioridade integer CONSTRAIN PrioridadeCerta check (prioridade>0 and prioridade<4),
+	preferencia text CONSTRAIN PrefCerta check (preferencia='filme' or preferencia='serie' or preferencia='documentario'),
+	preco integer CONSTRAIN PrecoMaiorZero check (preco>0),
+	CONSTRAIN AnuncioPK primary key(nome, tipo), 
+	CONSTRAIN AnuncioFK foreign key(Prepresentante, Pnome) references Publicidade(representante, nome)
 	
 );
 
 create table Cliente(
 	NIF integer unique,
-	email text primary key,
+	email text CONSTRAIN EmailPK primary key,
 	Stipo text,
 	nome text,
 	palavraPasse text,
-	telefone unique integer,				
+	telefone integer unique,				
 	morada text
 );
 
 create table Subscricao(
-	tipo text primary key check (tipo='Basic' or tipo='Gold' or tipo='Platinium'),
-	numMaxVisualiz integer unique check ( numMaxVisualiz=1 or numMaxVisualiz=2 or numMaxVisualiz=5),
-	qualidadeVideo integer unique check (qualidadeVideo='normal' or qualidadeVideo='FullHD' or qualidadeVideo='4K'),
-	preco integer unique check (preco=8 or preco=11 or preco=14)
+	tipo text CONSTRAIN TipoCerto check (tipo='Basic' or tipo='Gold' or tipo='Platinium'),
+	numMaxVisualiz integer unique CONSTRAIN MaxVizualCerto check ( numMaxVisualiz=1 or numMaxVisualiz=2 or numMaxVisualiz=5),
+	qualidadeVideo integer unique CONSTRAIN QualidadeCerto check (qualidadeVideo='normal' or qualidadeVideo='FullHD' or qualidadeVideo='4K'),
+	preco integer unique CONSTRAIN PrecoCerto check (preco=8 or preco=11 or preco=14),
+	CONSTRAIN TipoPK primary key (tipo)
 
 );
 
@@ -112,17 +112,17 @@ create table Aparece(
 	dataPublicacao text,
 	nome text,
 	tipo text,
-	foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao),
-	foreign key(nome, tipo) references Anuncio(nome, tipo)
+	CONSTRAIN ApareceFK1 foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao),
+	CONSTRAIN ApareceFK2 foreign key(nome, tipo) references Anuncio(nome, tipo)
 );
 
 create table Visualiza(
 	titulo text,
 	dataPublicacao text,
-	NIF integer references Cliente(NIF),
-	favorito integer check (favorito=0 or favorito=1),
+	NIF integer CONSTRAIN NifFK references Cliente(NIF),
+	favorito integer CONSTRAIN favoritoCerto check (favorito=0 or favorito=1),
 	critica text,
-	classificacao integer check (classificacao>0 and classificacao<6),
-	primary key (titulo, dataPublicacao, NIF),
-	foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao)
+	classificacao integer CONSTRAIN ClassCerto check (classificacao>0 and classificacao<6),
+	CONSTRAIN VisualizaPK primary key (titulo, dataPublicacao, NIF),
+	CONSTRAIN VisualizaFK foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao)
 );
