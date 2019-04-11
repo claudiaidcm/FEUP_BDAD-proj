@@ -18,7 +18,7 @@ create table Empresa (
 	representante text,
 	contacto integer unique,
 	morada text unique,
-	CONSTRAINT EmpresaPK primary key(nome, representante),
+	CONSTRAINT EmpresaPK primary key(nome, representante)
 
 );
 
@@ -62,7 +62,7 @@ create table Serie(
 	dataPublicacao text,
 	genero text check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficçao' or genero='cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
 	numTemporadas integer check (numTemporadas>0),
-	numEpisódiosTemporada integer check (numEpisodiosTemporada>0),
+	numEpisodiosTemporada integer check (numEpisodiosTemporada>0),
 	atorPrincipal text not null,
 	CONSTRAINT SerieFK foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao)
 );
@@ -79,7 +79,7 @@ create table Anuncio(
 	tipo text check (tipo='informativo' or tipo='comercial'),
 	Pnome text,
 	Prepresentante text,
-	duracao integer check (duraçao > 0),
+	duracao integer check (duracao > 0),
 	prioridade integer check (prioridade>0 and prioridade<4),
 	preferencia text check (preferencia='filme' or preferencia='serie' or preferencia='documentario'),
 	preco integer check (preco>0),
