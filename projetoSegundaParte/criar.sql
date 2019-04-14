@@ -53,7 +53,7 @@ drop table if exists Filme;
 create table Filme(
 	titulo text,
 	dataPublicacao text,
-	genero text NOT NULL check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficçao' or genero='cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
+	genero text NOT NULL check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficÃ§ao cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
 	atorPrincipal text NOT NULL,
 	CONSTRAINT FilmeFK foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao) ON DELETE set null ON UPDATE cascade
 	
@@ -65,7 +65,7 @@ drop table if exists Serie;
 create table Serie(
 	titulo text,
 	dataPublicacao text,
-	genero text NOT NULL check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficçao' or genero='cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
+	genero text NOT NULL check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficÃ§ao cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
 	numTemporadas integer NOT NULL check (numTemporadas>0) default 1,
 	numEpisodiosTemporada integer NOT NULL check (numEpisodiosTemporada>0),
 	atorPrincipal text NOT NULL,
@@ -112,7 +112,7 @@ create table Cliente(
 	morada text default 'nao listada'
 );
 
---Tabela: Subscrição
+--Tabela: SubscriÃ§Ã£o
 drop table if exists Subscricao;
 
 create table Subscricao(
