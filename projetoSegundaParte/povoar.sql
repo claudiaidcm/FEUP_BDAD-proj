@@ -168,7 +168,7 @@ INSERT INTO Filme(titulo, dataPublicacao, genero, atorPrincipal) VALUES ('Dumbo'
 INSERT INTO Filme(titulo, dataPublicacao, genero, atorPrincipal) VALUES ('Spiderman', '09/05/2019', 'aventura', 'Antonio');
 INSERT INTO Filme(titulo, dataPublicacao, genero, atorPrincipal) VALUES ('Cap Marvel', '23/05/2019', 'comedia', 'Ines');
 INSERT INTO Filme(titulo, dataPublicacao, genero, atorPrincipal) VALUES ('State', '19/06/2019', 'drama', 'Rita');
-INSERT INTO Filme(titulo, dataPublicacao, genero, atorPrincipal) VALUES ('Shazam', '26/06/2019', 'ficçao', 'Joao');
+INSERT INTO Filme(titulo, dataPublicacao, genero, atorPrincipal) VALUES ('Shazam', '26/06/2019', 'ficcao', 'Joao');
 INSERT INTO Filme(titulo, dataPublicacao, genero, atorPrincipal) VALUES ('Snu', '02/08/2019', 'cientifica', 'Rita');
 INSERT INTO Filme(titulo, dataPublicacao, genero, atorPrincipal) VALUES ('Destiny', '07/08/2019', 'musical', 'Jota');
 INSERT INTO Filme(titulo, dataPublicacao, genero, atorPrincipal) VALUES ('Us', '26/08/2019', 'romance', 'Fernando');

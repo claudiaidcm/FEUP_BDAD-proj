@@ -1,4 +1,3 @@
-﻿
 PRAGMA foreign_keys = off;
 
 -- Tabela: Empresa
