@@ -1,4 +1,4 @@
-
+﻿
 PRAGMA foreign_keys = off;
 
 -- Tabela: Empresa
@@ -116,7 +116,7 @@ create table Cliente(
 drop table if exists Subscricao;
 
 create table Subscricao(
-	tipo text check (tipo='Basic' or tipo='Gold' or tipo='Platinium'),					
+	tipo text check (tipo='Basic' or tipo='Gold' or tipo='Platinum'),					
 	numMaxVisualiz integer unique NOT NULL check ( numMaxVisualiz=1 or numMaxVisualiz=2 or numMaxVisualiz=5),
 	qualidadeVideo integer unique NOT NULL check (qualidadeVideo='normal' or qualidadeVideo='FullHD' or qualidadeVideo='4K'),
 	preco integer unique NOT NULL check (preco=8 or preco=11 or preco=14),
