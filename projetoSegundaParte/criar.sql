@@ -10,24 +10,26 @@ create table Empresa (
 	morada text unique,
 	CONSTRAINT EmpresaPK primary key(nome, representante)
 );
-
+--13
 --Tabela: Estudio
 drop table if exists Estudio;
 
 create table Estudio(
 	nome text,
 	representante text,
+	CONSTRAINT EstudioPK primary key(nome,representante),
 	CONSTRAINT EstudioFK foreign key(nome, representante) references Empresa(nome, representante) ON DELETE set null ON UPDATE cascade
 	
 );
-
+--24
 --Tabela: Publicidade
 drop table if exists Publicidade;
 
 create table Publicidade(
 	nome text,
 	representante text,
-	CONSTRAINT Publicidade foreign key(nome, representante) references Empresa(nome, representante) ON DELETE set null ON UPDATE cascade
+	CONSTRAINT PublicidadePK primary key(nome,representante),
+	CONSTRAINT PublicidadeFK foreign key(nome, representante) references Empresa(nome, representante) ON DELETE set null ON UPDATE cascade
 );
 
 --Tabela: Video
@@ -42,18 +44,19 @@ create table Video(
 	realizador text NOT NULL,
 	duracao integer NOT NULL check (duracao>0),
 	CONSTRAINT VideoPK primary key(titulo, dataPublicacao), 
-	CONSTRAINT VideoFK foreign key(Erepresentante, Enome) references Estudio(representante, nome) ON DELETE set null ON UPDATE cascade
+	CONSTRAINT VideoFK foreign key(Enome, Erepresentante) references Estudio(nome, representante) ON DELETE set null ON UPDATE cascade
 
 );
-
+--55
 --Tabela: Filme
 drop table if exists Filme;
 
 create table Filme(
 	titulo text,
 	dataPublicacao text,
-	genero text NOT NULL check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficçao cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
+	genero text NOT NULL check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficcao cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
 	atorPrincipal text NOT NULL,
+	CONSTRAINT FilmePK primary key(titulo, dataPublicacao),
 	CONSTRAINT FilmeFK foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao) ON DELETE set null ON UPDATE cascade
 	
 );
@@ -64,13 +67,14 @@ drop table if exists Serie;
 create table Serie(
 	titulo text,
 	dataPublicacao text,
-	genero text NOT NULL check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficçao cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
+	genero text NOT NULL check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficcao cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
 	numTemporadas integer NOT NULL check (numTemporadas>0) default 1,
 	numEpisodiosTemporada integer NOT NULL check (numEpisodiosTemporada>0),
 	atorPrincipal text NOT NULL,
+	CONSTRAINT SeriePK primary key(titulo, dataPublicacao),
 	CONSTRAINT SerieFK foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao) ON DELETE set null ON UPDATE cascade
 );
-
+--82
 -- Tabela: Documentario
 drop table if exists Documentario;
 
@@ -78,6 +82,7 @@ create table Documentario(
 	titulo text,
 	dataPublicacao text,
 	tipo text NOT NULL check (tipo='autobiografico' or tipo='informacao' or tipo='exposicao'),
+	CONSTRAINT DocumentarioPK primary key(titulo, dataPublicacao),
 	CONSTRAINT DocumentarioFK foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao) ON DELETE set null ON UPDATE cascade
 );
 
@@ -97,7 +102,7 @@ create table Anuncio(
 	CONSTRAINT AnuncioFK foreign key(Prepresentante, Pnome) references Publicidade(representante, nome) ON DELETE set null ON UPDATE cascade
 	
 );
-
+--110
 --Tabela: Cliente
 drop table if exists Cliente;
 
@@ -111,7 +116,7 @@ create table Cliente(
 	morada text default 'nao listada'
 );
 
---Tabela: Subscrição
+--Tabela: Subscri��o
 drop table if exists Subscricao;
 
 create table Subscricao(
@@ -122,7 +127,7 @@ create table Subscricao(
 	CONSTRAINT TipoPK primary key (tipo)
 
 );
-
+--136
 --Tabela: Aparece
 drop table if exists Aparece;
 
@@ -135,18 +140,20 @@ create table Aparece(
 	CONSTRAINT ApareceFK2 foreign key(nome, tipo) references Anuncio(nome, tipo) ON DELETE set null ON UPDATE cascade
 );
 
+--147
 -- Tabela: Visualiza
 drop table if exists Visualiza;
 
 create table Visualiza(
 	titulo text,
 	dataPublicacao text,
-	NIF integer references Cliente(NIF),
+	email text references Cliente(email),
 	favorito integer NOT NULL check (favorito=0 or favorito=1) default 0,
 	critica text default 'nao efetuou critica',
 	classificacao integer check (classificacao>0 and classificacao<6) default NULL,
-	CONSTRAINT VisualizaPK primary key (titulo, dataPublicacao, NIF),
+	CONSTRAINT VisualizaPK primary key (titulo, dataPublicacao, email),
 	CONSTRAINT VisualizaFK foreign key(titulo, dataPublicacao) references Video(titulo, dataPublicacao) ON DELETE set null ON UPDATE cascade
+
 );
 
 PRAGMA foreign_keys = on;
