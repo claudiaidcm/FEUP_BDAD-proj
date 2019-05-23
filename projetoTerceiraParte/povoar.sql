@@ -185,7 +185,7 @@ INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALU
 INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (8,17, 0, 'Excelente', 3);
 INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (8, 18, 1, 'Muito bom', 3);
 INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (8, 19, 1, 'Mediocre', 3);
-INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (8, 19, 1, 'Melhor filme', 5);
+--INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (8, 19, 1, 'Melhor filme', 5);
 INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (13, 20, 0, 'Mediocre', 3);
 INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (12, 21, 1, 'Muito bom', 4);
 INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (11, 22, 1, 'Suficiente', 4);
@@ -201,6 +201,6 @@ INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALU
 INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (14, 4, 0, 'Bad', 2);
 INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (20, 21, 1, 'Recomendo', 4);
 INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (10, 20, 0, 'Top', 4);
-INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (8, 19, 1, 'Excelente', 5);
+--INSERT INTO Visualiza(idVideo, idCliente, favorito, critica, classificacao) VALUES (8, 19, 1, 'Excelente', 5);
 
 
