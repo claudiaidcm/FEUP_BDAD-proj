@@ -40,6 +40,29 @@ INSERT INTO Publicidade VALUES (7);
 
 --38
 --Video
+<<<<<<< HEAD
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('After', '2019-04-17', 1, 'Animais', 'P.W', 100); --1
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Dumbo', '2019-03-05', 1, 'Cadeiras', 'Leia', 76); --2
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Spiderman', '2019-02-05', 1, 'Mesas', 'Sadie', 44); --3
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Cap Marvel', '2017-05-23', 1, 'Aguas', 'Jose', 77);--4
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('State', '2019-06-19', 9, 'Liberty', 'Luis', 32);--5
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Shazam', '2013-06-26', 9, 'Liberty','Joca', 52);--6
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Snu', '2019-04-08', 6, 'Telemoveis', 'Liberty', 77);--7
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Destiny', '2019-04-17', 10, 'Ratos', 'Bella', 85);--8
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Us', '2016-07-10', 10, 'Computadores', 'Bella', 123);--9
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Kursk', '2019-04-15', 3, 'Folhas', 'Caitlin', 444);--10
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Corgi', '2019-05-11', 12, 'Papeis', 'Caitlin', 56);--11
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Diamantino', '2016-07-10', 12, 'Guerra', 'Sara', 664);--12
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Avatar: A Lenda de Aang', '2011-04-15', 12, 'Aleatorio', 'Sara', 12);--13
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('The World at War', '2019-11-11', 10, 'Vida', 'Sinead', 155);--14
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Sherlock', '2019-04-15', 10, 'Coisas', 'Sinead', 66);--15
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Cosmos', '2019-04-17', 6, 'Familia', 'Sinead', 90);--16
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Planet Earth', '2018-07-10', 6, 'Apocalipse', 'Sinead', 61);--17
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Place', '2016-07-10', 3, 'Monstros', 'Ray', 55);--18
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Change', '2014-07-17', 3, 'Morte', 'Matilda', 43);--19
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Spot', '2016-07-10', 12, 'Reis', 'Rosie', 56);--20
+INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Local', '2019-04-17', 12, 'Oeste', 'Claudia', 91);--21
+=======
 INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('After', '17/04/2015', 1, 'Animais', 'P.W', 100); --1
 INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Dumbo', '08/05/2017', 1, 'Cadeiras', 'Leia', 76); --2
 INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Spiderman', '09/05/2019', 1, 'Mesas', 'Sadie', 44); --3
@@ -61,6 +84,7 @@ INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, dura
 INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Change', '08/10/2011', 3, 'Morte', 'Matilda', 43);--19
 INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Spot', '13/11/2010', 12, 'Reis', 'Rosie', 56);--20
 INSERT INTO Video(titulo, dataPublicacao, idEmpresa, descricao, realizador, duracao) VALUES ('Local', '24/12/2010', 12, 'Oeste', 'Claudia', 91);--21
+>>>>>>> e42db70ae141f0b4105af02aa7467c792360200a
 
 --62
 --Filmes
