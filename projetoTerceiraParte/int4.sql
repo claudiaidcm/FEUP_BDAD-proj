@@ -2,6 +2,7 @@
 .headers on
 .nullvalue NULL
 
-Select nome, preco
+--Nome e preço do anuncio mais barato
+Select nome as 'anuncio mais barato', preco
 From Anuncio
 Where preco =(Select min(preco) from Anuncio)

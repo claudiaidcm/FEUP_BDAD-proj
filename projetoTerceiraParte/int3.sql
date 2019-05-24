@@ -2,5 +2,6 @@
 .headers on
 .nullvalue NULL
 
-Select Avg(duracao) Duracao_media
+--Duraçao media de um anuncio
+Select Avg(duracao) 'Duracao media de um anuncio'
 From Anuncio;

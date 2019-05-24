@@ -2,6 +2,7 @@
 .headers on
 .nullvalue NULL
 
-SELECT Stipo as Subscricao_mais_popular, COUNT(Stipo) as Numero_de_subscricoes
+--SUBSCRICAO MAIS POPULAR
+SELECT max(Stipo) as 'Subscricao mais popular'
 From Cliente
 limit 1;

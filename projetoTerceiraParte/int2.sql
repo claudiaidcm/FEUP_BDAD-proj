@@ -2,5 +2,6 @@
 .headers on
 .nullvalue NULL
 
-Select SUM(preco) Lucro_Anuncios
+--Lucro proveniente de anúncios
+Select SUM(preco) 'Lucro proveniente de Anúncios'
 From Anuncio;

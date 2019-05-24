@@ -2,5 +2,6 @@
 .headers on
 .nullvalue NULL
 
-Select Count(*) Total_Clientes
+--Numero total de clientes com a subscrição
+Select Count(*) 'Numero total de clientes '
 From Cliente
