@@ -17,7 +17,7 @@ drop table if exists Estudio;
 
 create table Estudio(
 	idEmpresa INTEGER PRIMARY KEY,
-	CONSTRAINT EstudioFK foreign key(idEmpresa) references Empresa(idEmpresa) ON DELETE set null ON UPDATE cascade
+	CONSTRAINT EstudioFK foreign key(idEmpresa) REFERENCES Empresa(idEmpresa) ON DELETE set null ON UPDATE cascade
 );
 
 --24
@@ -26,7 +26,7 @@ drop table if exists Publicidade;
 
 create table Publicidade(
 	idEmpresa INTEGER PRIMARY KEY,
-	CONSTRAINT EstudioFK foreign key(idEmpresa) references Empresa(idEmpresa) ON DELETE set null ON UPDATE cascade
+	CONSTRAINT EstudioFK foreign key(idEmpresa) REFERENCES Empresa(idEmpresa) ON DELETE set null ON UPDATE cascade
 );
 
 --Tabela: Video
@@ -50,7 +50,7 @@ create table Filme(
 	idVideo INTEGER PRIMARY KEY,
 	genero text NOT NULL check (genero='acao' or genero='animacao' or genero='aventura' or genero='comedia' or genero='drama' or genero='ficcao cientifica' or genero='musical' or genero='romance' or genero='suspense' or genero='terror'),
 	atorPrincipal text NOT NULL,
-	CONSTRAINT FilmeFK foreign key(idVideo) references Video(idVideo) ON DELETE set null ON UPDATE cascade
+	CONSTRAINT FilmeFK foreign key(idVideo) REFERENCES Video(idVideo) ON DELETE set null ON UPDATE cascade
 );
 
 -- Tabela: Serie
@@ -62,7 +62,7 @@ create table Serie(
 	numTemporadas integer NOT NULL check (numTemporadas>0) default 1,
 	numEpisodiosTemporada integer NOT NULL check (numEpisodiosTemporada>0),
 	atorPrincipal text NOT NULL,
-	CONSTRAINT SerieFK foreign key(idVideo) references Video(idVideo) ON DELETE set null ON UPDATE cascade
+	CONSTRAINT SerieFK foreign key(idVideo) REFERENCES Video(idVideo) ON DELETE set null ON UPDATE cascade
 );
 
 --82
@@ -71,9 +71,8 @@ drop table if exists Documentario;
 
 create table Documentario(
 	idVideo INTEGER PRIMARY KEY,
-	dataPublicacao text,
 	tipo text NOT NULL check (tipo='autobiografico' or tipo='informacao' or tipo='exposicao'),
-	CONSTRAINT DocumentarioFK foreign key(idVideo) references Video(idVideo) ON DELETE set null ON UPDATE cascade
+	CONSTRAINT DocumentarioFK foreign key(idVideo) REFERENCES Video(idVideo) ON DELETE set null ON UPDATE cascade
 );
 
 -- Tabela: Anuncio
@@ -88,7 +87,7 @@ create table Anuncio(
 	prioridade integer NOT NULL check (prioridade>0 and prioridade<4),
 	preferencia text NOT NULL check (preferencia='filme' or preferencia='serie' or preferencia='documentario'),
 	preco integer NOT NULL check (preco>0),
-	CONSTRAINT AnuncioFK foreign key(idEmpresa) references Publicidade(idEmpresa) ON DELETE set null ON UPDATE cascade
+	CONSTRAINT AnuncioFK foreign key(idEmpresa) REFERENCES Publicidade(idEmpresa) ON DELETE set null ON UPDATE cascade
 	
 );
 --110
@@ -126,8 +125,8 @@ create table Aparece(
 	idVideo INTEGER,
 	idAnuncio INTEGER,
 	CONSTRAINT AparecePK primary key(idVideo, idAnuncio)
-	CONSTRAINT ApareceFK1 foreign key(idVideo) references Video(idVideo) ON DELETE set null ON UPDATE cascade,
-	CONSTRAINT ApareceFK2 foreign key(idAnuncio) references Anuncio(idAnuncio) ON DELETE set null ON UPDATE cascade
+	CONSTRAINT ApareceFK1 foreign key(idVideo) REFERENCES Video(idVideo) ON DELETE set null ON UPDATE cascade,
+	CONSTRAINT ApareceFK2 foreign key(idAnuncio) REFERENCES Anuncio(idAnuncio) ON DELETE set null ON UPDATE cascade
 );
 
 --147
@@ -136,7 +135,7 @@ drop table if exists Visualiza;
 
 create table Visualiza(
 	idVideo INTEGER REFERENCES Video(idVideo) ON DELETE set null ON UPDATE cascade,
-	idCliente text references Cliente(idCliente),
+	idCliente text REFERENCES Cliente(idCliente),
 	favorito integer NOT NULL check (favorito=0 or favorito=1) default 0,
 	critica text default 'nao efetuou critica',
 	classificacao integer check (classificacao>0 and classificacao<6) default NULL,
