@@ -16,3 +16,4 @@ Select titulo as 'Filmes com melhor classificacao', avgById.ac as 'Classificacao
 From Video, avgById
 Where Video.idVideo = avgById.idVideo;
 
+Drop View If EXISTS avgById;
