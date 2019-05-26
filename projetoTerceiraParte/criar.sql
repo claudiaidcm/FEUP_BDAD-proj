@@ -96,13 +96,14 @@ drop table if exists Cliente;
 
 create table Cliente(
 	idCliente INTEGER PRIMARY KEY AUTOINCREMENT,
-	NIF integer unique default NULL,
+	NIF integer default NULL,
 	email text NOT NULL,						
 	Stipo text NOT NULL REFERENCES Subscricao(tipo),
 	nome text NOT NULL,
 	palavraPasse text NOT NULL,
-	telefone integer unique default NULL,				
-	morada text default 'nao listada'
+	telefone integer default NULL,				
+	morada text default 'nao listada',
+	minVisualizados integer default 0
 );
 
 --Tabela: Subscrição

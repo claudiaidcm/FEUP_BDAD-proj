@@ -96,18 +96,18 @@ INSERT INTO Documentario(idVideo, tipo) VALUES (19, 'autobiografico');
 
 --92
 --Anuncios
-INSERT INTO Anuncio(nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Galp', 'comercial', 13, 2, 3, 'filme', 1000);--1
-INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Shell', 'comercial', 13, 3, 1, 'serie', 1111);--2
-INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Continente', 'comercial', 2, 4, 1, 'serie', 2134);--3
-INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Pingo Doce', 'informativo', 7, 5, 2, 'filme', 1000000);--4
-INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('NorteShopping', 'informativo', 9, 6, 3, 'documentario', 1243);--5
-INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('McDonalds', 'informativo', 9, 7, 3, 'documentario', 1243);--6
-INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('BK', 'informativo', 9, 8, 1, 'filme', 111111);--7
-INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Taco Bell', 'comercial', 2, 9, 3, 'documentario', 4212);--8
-INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Five Guys', 'comercial', 7, 15, 2, 'filme', 44121);--9
-INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Munchie', 'informativo', 7, 15, 2, 'documentario', 12551);--10
-INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Amazon',  'comercial', 13, 3, 2, 'serie', 6651);--11
-INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Luso',  'comercial', 13, 10, 1, 'filme', 6652);--12
+INSERT INTO Anuncio(nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Galp', 'comercial', 13, 2, 3, 'filme', 100);--1
+INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Shell', 'comercial', 13, 3, 1, 'serie', 110);--2
+INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Continente', 'comercial', 2, 4, 1, 'serie', 200);--3
+INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Pingo Doce', 'informativo', 7, 5, 2, 'filme', 100);--4
+INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('NorteShopping', 'informativo', 9, 6, 3, 'documentario', 190);--5
+INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('McDonalds', 'informativo', 9, 7, 3, 'documentario', 120);--6
+INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('BK', 'informativo', 9, 8, 1, 'filme', 110);--7
+INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Taco Bell', 'comercial', 2, 9, 3, 'documentario', 400);--8
+INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Five Guys', 'comercial', 7, 15, 2, 'filme', 80);--9
+INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Munchie', 'informativo', 7, 15, 2, 'documentario', 100);--10
+INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Amazon',  'comercial', 13, 3, 2, 'serie', 200);--11
+INSERT INTO Anuncio( nome, tipo,idEmpresa, duracao, prioridade, preferencia, preco) VALUES ('Luso',  'comercial', 13, 10, 1, 'filme', 90);--12
 
 
 --Subscriçoes
