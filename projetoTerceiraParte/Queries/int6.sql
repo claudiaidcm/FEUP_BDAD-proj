@@ -3,6 +3,8 @@
 .nullvalue NULL
 
 --SUBSCRICAO MAIS POPULAR
-SELECT max(Stipo) as 'Subscricao mais popular'
+SELECT Stipo, count(*) as 'Subscricao mais popular'
 From Cliente
+group by Stipo
+order by count(*) DESC
 limit 1;
